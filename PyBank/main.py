@@ -1,12 +1,13 @@
+# Dependencies
 import csv
 import os
 
 # Set the file path
-file_path = os.path.join("Resources", "budget_data.csv")
-data = open(file_path)  #data is now a file object
-Reader = csv.reader(data)   #created a reader object to use
+file_path = os.path.join("PyBank", "Resources", "budget_data.csv")
+data = open(file_path)
+Reader = csv.reader(data)
 
-header = next(Reader) #The first line is the header
+header = next(Reader)
 
 # Initialize variables
 total_months = 0
@@ -21,7 +22,7 @@ greatest_decrease_amount = 0
 # Read the CSV file
 with open(file_path, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
-    next(csvreader)  # Skip the header row
+    next(csvreader)
 
     # Loop through each row in the CSV file
     for row in csvreader:
